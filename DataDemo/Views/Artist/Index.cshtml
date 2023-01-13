@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Artist>
+@{
+    ViewData["Title"] = "Index";
+}
+  
+<h2>Here is the list of Employees</h2>
+<table style="width:50%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ArtistId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Artist e in Model)
+        {
+            <tr>
+                <td>@e.Name</td>
+                <td>@e.ArtistId</td>
+               <a asp-controller="Artist" asp-action="AlbumByArtist" asp-route-id="10">AlbumByArtist</a>
+            </tr>
+        }
+    </tbody>
+</table>
